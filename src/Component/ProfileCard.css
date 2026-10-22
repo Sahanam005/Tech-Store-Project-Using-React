@@ -1,0 +1,247 @@
+
+.product-card {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e7eaf0;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(23, 32, 51, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(23, 32, 51, 0.10);
+}
+
+/* Image area */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 22px;
+    background: #f7f8fc;
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+/* Product labels */
+.bestseller-badge,
+.discount-badge {
+    position: absolute;
+    top: 12px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    max-width: calc(50% - 20px);
+    padding: 7px 9px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.bestseller-badge {
+    left: 12px;
+    color: #87580c;
+    background: #fff2cd;
+}
+
+.discount-badge {
+    right: 12px;
+    color: #c5364a;
+    background: #ffe8ec;
+}
+
+/* Wishlist heart */
+.wishlist-button {
+    position: absolute;
+    top: 49px;
+    right: 12px;
+    z-index: 3;
+    width: 37px;
+    height: 37px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e3e7ef;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #64748b;
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.wishlist-button:hover,
+.wishlist-button.active {
+    color: #e54862;
+    background: #fff0f2;
+    border-color: #ffd0d8;
+}
+
+/* Product details */
+.product-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+}
+
+.product-brand {
+    margin: 0 0 6px;
+    color: #818ba0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.product-name {
+    min-height: 44px;
+    margin: 0 0 12px;
+    color: #182033;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+/* Five-star rating */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.star.filled {
+    color: #f5b82e;
+}
+
+.star.empty {
+    color: #d8dde6;
+}
+
+.star.half {
+    background: linear-gradient(
+        90deg,
+        #f5b82e 50%,
+        #d8dde6 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating-number {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+/* Price */
+.price-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 9px;
+}
+
+.price {
+    color: #182033;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.original-price {
+    color: #9aa3b2;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+/* Delivery */
+.delivery-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 13px 0 18px;
+    color: #13865e;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.delivery-text span {
+    font-weight: 800;
+}
+
+/* Add to Cart */
+.buy-button {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.buy-button:hover {
+    background: #3730a3;
+}
+
+.buy-button:active {
+    transform: scale(0.98);
+}
+
+.buy-button span {
+    font-size: 19px;
+    line-height: 1;
+}
+
+@media (max-width: 520px) {
+    .image-container {
+        height: 230px;
+    }
+}
